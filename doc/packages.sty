@@ -1,0 +1,94 @@
+% This style file requires at least LaTeX version 2e.
+\NeedsTeXFormat{LaTeX2e}
+
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
+
+\RequirePackage[italian]{babel}
+\RequirePackage[T1]{fontenc}
+
+\RequirePackage{amsmath, amssymb, amsthm, mathtools}
+\RequirePackage{cancel}
+\RequirePackage{cleveref}
+\crefname{figure}{Figura}{Figure}
+\crefname{table}{Tabella}{Tabelle}
+\newcommand{\crefrangeconjunction}{~--~}
+
+\RequirePackage{adjustbox}
+\RequirePackage{dirtree}
+
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode} % algorithms
+\RequirePackage{mathrsfs} 	% serif fonts
+\RequirePackage{bbm}        % indicator function
+\RequirePackage{graphicx}
+\RequirePackage{float}		% float option [H]
+\RequirePackage{subfigure}
+\RequirePackage{booktabs}   % prettier tables
+\RequirePackage{array}
+\RequirePackage{times}
+% Prevent latex error on too many alphabets
+
+\RequirePackage{bm} 		% \bm for bold mathematical symbols
+\RequirePackage{subfiles} 	% \subfile support
+\setlength\parindent{0pt}
+\RequirePackage{setspace}
+\RequirePackage[framemethod=TikZ]{mdframed} % Theorem
+\RequirePackage{enumitem}
+\RequirePackage{chngcntr}
+\RequirePackage[margin=1.5cm]{caption}
+
+% \RequirePackage[colorlinks]{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{titleps}    % subsection in header
+\RequirePackage{listings}
+\RequirePackage{tikz-cd}
+%------------------------------------------------
+\newcommand{\fcm}{\textit{fuzzy} $c$\textit{-means}}
+\newcommand{\km}{$k$-\textit{means}}
+\newcommand{\loss}{\ensuremath{ \mathcal{L}_{d,k}}}
+\newcommand{\mr}{\textit{MapReduce}}
+\newcommand{\pe}{\mathrel{+}=}
+
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\newcommand{\BeginToDo}{\par
+	\moveleft 1cm \vbox{\color{red}\hrule width \dimexpr\linewidth+2cm\relax height 1.75pt}
+	\centerline{\color{red} \bfseries THE FOLLOWING CONTENT NEEDS REVISION}
+	\markboth{THIS PAGE CONTAINS STUFF TO BE REVISED}
+	{THIS PAGE CONTAINS STUFF TO BE REVISED}}
+\newcommand{\EndToDo}{\par
+	\centerline{\color{red} \bfseries ---end of to be revised text---} 
+	\moveleft 1cm \vbox{\color{red}\hrule width \dimexpr\linewidth+2cm\relax height 1.75pt}
+	\markboth {THIS PAGE CONTAINS STUFF TO BE REVISED}
+	{THIS PAGE CONTAINS STUFF TO BE REVISED}
+	\medskip}
+
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\varprod}{1}{mathx}{"91}
+
+%--------------------
+% Algorithmic package
+%--------------------
+\algnewcommand{\Init}[1]{%
+  \State \textbf{Init:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\algstring}{\iflanguage{italian}{Algoritmo}{Algorithm}}
+\floatname{algorithm}{\algstring}

@@ -1,0 +1,13 @@
+{
+  "id": "test",
+  "centroids": [3],
+  "initialization": ["random","step","plusplus"],
+  "algorithm": ["fuzzy-cmeans"],
+  "stopping_criterion": ["biggest-diff"],
+  "stopping_criterion_threshold": 0.5,
+  "max_iterations": 5,
+  "plusplus_parameter": 2,
+  "fuzzy_weighting_exponent": [1.5],
+  "parallel": true,
+  "logging": false
+}
